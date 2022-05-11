@@ -371,10 +371,10 @@ public class frmInicio extends javax.swing.JFrame {
             Cmat.Transpuesta();
             try {
                 //Cmat.ImprimirMatrizC();
-                tpMatrizC.setText("\nMATRIZ TRANSPUESTA: \n"+
+                tpMatrizC.setText("MATRIZ TRANSPUESTA: \n"+
                 "\nLa matriz traspuesta es la acción de seleccionar las filas de la matriz original y "
-                +"reescribirlas como columnas en la nueva matriz e invertir el proceso para las columnas."
-                +"eneralmente cuando cambiamos las filas por columnas y las columnas por filas lo indicamos añadiendo un superíndice T.\n"
+                +"reescribirlas como columnas en la nueva matriz e invertir el proceso para las columnas. "
+                +"Generalmente cuando cambiamos las filas por columnas y las columnas por filas lo indicamos añadiendo un superíndice T.\n"
                 +"\nZ₍nxm₎ = \n"
                 +"\t|Z₁₁\t···\tZ₁m \t|\n"
                 +"\t|·  \t· \t·  \t| -> \n" 
@@ -385,14 +385,14 @@ public class frmInicio extends javax.swing.JFrame {
                 +"\t|·  \t· \t·  \t|\n" 
                 +"\t|Zm₁ \t···\tZmxn\t|\n"  
                 +"\nDada una matriz Z cualquiera con n filas y m columnas podemos construir la matriz traspuesta, ZT, que tendrá m filas y n columnas.\n"
-                +"\nEntonces empezaremos con nuestra solucion. para que funcione nuestra matriz A primeramente tenemos que realizar algun proceso de antemano"
-                +"Puesto que estamos utilizando 2 matrices.\n"
+                +"\nEntonces empezaremos con nuestra solucion. Para que funcione nuestra matriz transpuesta C. Primordialmente, tenemos que realizar alguna operacion de antemano (SUMA, RESTA O MULTIPLICACION).\n"
+                +"\nSe debe hacer uso de estas operaciones para que se pueda obtener una sola matriz del resultado de las 2 anteriores y se ejecute su Transpuesta.\n"
                 +"Los valores de la matriz A son:\n-----\n"
                 +Cmat.ImprimirMatrizA()+"-----"
                 +"\nLos valores de la matriz B son:\n-----\n"
                 +Cmat.ImprimirMatrizB()+"-----"
-                +"\nLuego realiza la operacion seleccionada y se implementa la matriz Transpuesta\n-----\n"
-                +Cmat.ImprimirMatrizC()+"-----"          
+                +"\nLuego realiza la operacion seleccionada y se implementa la matriz Transpuesta\n----------\n"
+                +Cmat.ImprimirMatrizC()+"----------"          
                 );
             } catch (Exception e) {
                 JOptionPane.showMessageDialog(null, "Error 0100: Problema al imprimir la matriz");
@@ -446,12 +446,8 @@ public class frmInicio extends javax.swing.JFrame {
                         +"\nLa suma de matrices son operaciónes lineales que unifican los "
                         +"elementos de las matrices estas deben tener la misma posicion y el mismo orden. "
                         +"El resultado obtenido es posible dado que todos tienen la misma posición(mismos numeros de subíndice). "
-                        +"Si fuera distinta no se podrian sumar. \n"
-                        +"\nEmpezando con el procedimiento tenemos que tener en cuenta los valores de ambas matrices:"
-                        +"\nPara la Matriz A los valores recogidos fueron:\n-----\n"+Cmat.ImprimirMatrizA()+"-----"
-                        +"\nPara la Matriz B los valores recogidos fueron:\n-----\n"+Cmat.ImprimirMatrizB()+"-----"
-                        +"\nCon estos datos vamos a realizar la operacion con matrices respectiva."
-                        +"En nuestro caso vamos a realizar una suma de matrices por lo que vamos a guiarnos "
+                        +"Si fuera distinta no se podrian sumar. \n"                        
+                        +"\nEn nuestro caso vamos a realizar una suma de matrices por lo que vamos a guiarnos "
                         +"de la siguiente formula:\n"
                         +"Z₍₃x₃₎ + X₍₃x₃₎ = \n"
                         +"\t|Z₁₁\tZ₁₂\tZ₁₃\t|\tX₁₁\tX₁₂\tX₁₃|\n"
@@ -461,7 +457,12 @@ public class frmInicio extends javax.swing.JFrame {
                         +"\t|Z₁₁+X₁₁\tZ₁₂+X₁₂\tZ₁₃+X₁₃|\n"
                         +"\t|Z₂₁+X₂₁\tZ₂₂+X₂₂\tZ₂₃+X₂₃|\n"
                         +"\t|Z₃₁+X₃₁\tZ₃₂+X₃₂\tZ₃₃+X₃₃|\n"
-                        +"Teniendo en cuenta este procedimiento el resultado obtenido al sumar "
+                        
+                        +"\nEmpezando con el procedimiento tenemos que tener en cuenta los valores de ambas matrices:"
+                        +"\nPara la Matriz A los valores recogidos fueron:\n-----\n"+Cmat.ImprimirMatrizA()+"-----"
+                        +"\nPara la Matriz B los valores recogidos fueron:\n-----\n"+Cmat.ImprimirMatrizB()+"-----"
+                        +"\nCon estos datos vamos a realizar la operacion con matrices respectiva vista con anterioridad. "                           
+                        +"\nFinalmente, el resultado obtenido al sumar "
                         +"nuestra Matriz A con la Matriz B es:\n----------\n"+Cmat.ImprimirMatrizC()+"----------");
             } catch (Exception e) {
                 JOptionPane.showMessageDialog(null, "Error 0100: Problema al imprimir la matriz");
@@ -478,26 +479,27 @@ public class frmInicio extends javax.swing.JFrame {
             try {
                 //Cmat.ImprimirMatrizC();
                 tpMatrizC.setText("RESTA DE MATRICES: \n"
-                        +"\nLa resta de matrices es una operación lineal que unifican los "
+                        +"\nLa resta de matrices es una operación lineal que unifica los "
                         +"elementos de las matrices estas deben tener la misma posicion y el mismo orden. "
                         +"El resultado obtenido es posible dado que todos tienen la misma posición(mismos numeros de subíndice). "
-                        +"Si fuera distinta no se podrian restar. \n"
-                        +"\nEmpezando con el procedimiento tenemos que tener en cuenta los valores de ambas matrices:"
-                        +"\nPara la Matriz A los valores recogidos fueron:\n-----\n"+Cmat.ImprimirMatrizA()+"-----"
-                        +"\nPara la Matriz B los valores recogidos fueron:\n-----\n"+Cmat.ImprimirMatrizB()+"-----"
-                        +"\nCon estos datos vamos a realizar la operacion con matrices respectiva."
-                        +"En nuestro caso vamos a realizar una resta de matrices por lo que vamos a guiarnos "
+                        +"Si fuera distinta no se podrian restar. \n"                        
+                        +"\nEn nuestro caso vamos a realizar una resta de matrices por lo que vamos a guiarnos "
                         +"de la siguiente formula:\n"
                         +"Z₍₃x₃₎ - X₍₃x₃₎ = \n"
                         +"\t|Z₁₁\tZ₁₂\tZ₁₃\t|\tX₁₁\tX₁₂\tX₁₃|\n"
                         +"\t|Z₂₁\tZ₂₂\tZ₂₃\t-\tX₂₁\tX₂₂\tX₂₃|=\n"
                         +"\t|Z₃₁\tZ₃₂\tZ₃₃\t|\tX₃₁\tX₃₂\tX₃₃|\n"
-                        + "Finalmente, vamos a realizar la operacion de esta forma:\n"       
+                        + "Finalmente, el resultado de la resta sera:\n"       
                         +"\t|Z₁₁-X₁₁\tZ₁₂-X₁₂\tZ₁₃-X₁₃|\n"
                         +"\t|Z₂₁-X₂₁\tZ₂₂-X₂₂\tZ₂₃-X₂₃|\n"
                         +"\t|Z₃₁-X₃₁\tZ₃₂-X₃₂\tZ₃₃-X₃₃|\n"
-                        +"Haciendo uso de la formula ya podremos hallar la solucion de nuestra operacion. "
-                        +"El resultado de la resta de ambas matrices es: "+Cmat.ImprimirMatrizC());
+                        
+                        +"\nEmpezando con el procedimiento tenemos que tener en cuenta los valores de ambas matrices:"
+                        +"\nPara la Matriz A los valores recogidos fueron:\n-----\n"+Cmat.ImprimirMatrizA()+"-----"
+                        +"\nPara la Matriz B los valores recogidos fueron:\n-----\n"+Cmat.ImprimirMatrizB()+"-----"
+                        +"\nCon estos datos vamos a realizar la operacion con matrices respectiva vista con anterioridad. "                           
+                        +"\nFinalmente, el resultado obtenido al restar "
+                        +"nuestra Matriz A con la Matriz B es:\n----------\n"+Cmat.ImprimirMatrizC()+"----------");
             } catch (Exception e) {
                 JOptionPane.showMessageDialog(null, "Error 0100: Problema al imprimir la matriz");
             }
@@ -535,7 +537,7 @@ public class frmInicio extends javax.swing.JFrame {
                         +"|\t\t                \t·\t\t\t·             |\n"
                         +"|Zn₁*Y₁₁+...+Znm*Yn₁\t···\tZn1*Y₁m+...+Znm*Ynm|\n"
 
-                        +"\nEl resultado de la multiplicacion de ambas matrices es:\n "+Cmat.ImprimirMatrizC());
+                        +"\nEl resultado de la multiplicacion de ambas matrices es:\n----------\n"+Cmat.ImprimirMatrizC()+"----------");
             } catch (Exception e) {
                 JOptionPane.showMessageDialog(null, "Error 0100: Problema al imprimir la matriz");
             }
