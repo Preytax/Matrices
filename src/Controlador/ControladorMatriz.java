@@ -12,7 +12,7 @@ public class ControladorMatriz extends ModeloMatriz {
     int columnasA;
     int filasB;
     int columnasB;
-    //hola
+    // todo correcto
     public ControladorMatriz() {
         super(0, 0, 0, 0);
     }
