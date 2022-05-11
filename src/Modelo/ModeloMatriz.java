@@ -44,9 +44,7 @@ public class ModeloMatriz {
     public int getColumanasB() {
         return ColumanasB;
     }
-
     public void setColumanasB(int ColumanasB) {
         this.ColumanasB = ColumanasB;
     }
-
 }

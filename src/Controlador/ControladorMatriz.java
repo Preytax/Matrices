@@ -5,6 +5,14 @@ import javax.swing.JOptionPane;
 
 public class ControladorMatriz extends ModeloMatriz {
 
+    int matrizArrayA[][];
+    int matrizArrayB[][];
+    int matrizArrayC[][];
+    int filasA;
+    int columnasA;
+    int filasB;
+    int columnasB;
+    
     public ControladorMatriz() {
         super(0, 0, 0, 0);
     }
@@ -13,13 +21,6 @@ public class ControladorMatriz extends ModeloMatriz {
         super(FilasA, ColumanasA, FilasB, ColumanasB);
     }
 
-    int matrizArrayA[][];
-    int matrizArrayB[][];
-    int matrizArrayC[][];
-    int filasA;
-    int columnasA;
-    int filasB;
-    int columnasB;
 
     public void Datos(int filasMA, int columnasMA, int filasMB, int columnasMB) {
         setFilasA(filasMA);
@@ -62,48 +63,63 @@ public class ControladorMatriz extends ModeloMatriz {
         return matrizArrayB;
     }
 
-    public void ImprimirMatrizA() {
+    public String ImprimirMatrizA() {
+        String aux="";
         System.out.println("Matriz A:");
         for (int i = 0; i < matrizArrayA.length; i++) {
             System.out.print("|");
             for (int j = 0; j < matrizArrayA[i].length; j++) {
+                aux += matrizArrayA[i][j];
+                aux += "  ";
                 System.out.print(matrizArrayA[i][j]);
                 if (j != matrizArrayA[i].length - 1) {
                     System.out.print("\t");
                 }
             }
             System.out.println("|");
+            aux += "\n";
         }
         System.out.println(" ");
+        return aux;
     }
 
-    public void ImprimirMatrizB() {
+    public String ImprimirMatrizB() {
+        String aux="";
         System.out.println("Matriz B:");
         for (int x = 0; x < matrizArrayB.length; x++) {
             System.out.print("|");
             for (int y = 0; y < matrizArrayB[x].length; y++) {
+                aux += matrizArrayB[x][y];
+                aux += "  ";
                 System.out.print(matrizArrayB[x][y]);
                 if (y != matrizArrayB[x].length - 1) {
                     System.out.print("\t");
                 }
             }
             System.out.println("|");
+            aux += "\n";
         }
         System.out.println(" ");
+        return aux;
     }
 
-    public void ImprimirMatrizC() {
+    public String ImprimirMatrizC() {
+        String resultado = "";
         for (int i = 0; i < matrizArrayC.length; i++) {
             System.out.print("|");
             for (int j = 0; j < matrizArrayC[i].length; j++) {
+                resultado += matrizArrayC[i][j];
+                resultado += "    ";
                 System.out.print(matrizArrayC[i][j]);
                 if (j != matrizArrayC[i].length - 1) {
                     System.out.print("\t");
                 }
             }
+            resultado += "\n";
             System.out.println("|");
         }
         System.out.println(" ");
+        return resultado;
     }
 
     public void SumarMatrices() {
