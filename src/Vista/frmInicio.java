@@ -51,7 +51,7 @@ public class frmInicio extends javax.swing.JFrame {
         btnTranspuesta = new javax.swing.JButton();
         btnDeterminante = new javax.swing.JButton();
         btnMultiplicar = new javax.swing.JButton();
-        jButton7 = new javax.swing.JButton();
+        Identidad = new javax.swing.JButton();
         btnRestar = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         jSeparator2 = new javax.swing.JSeparator();
@@ -208,10 +208,15 @@ public class frmInicio extends javax.swing.JFrame {
             }
         });
 
-        jButton7.setBackground(new java.awt.Color(0, 102, 102));
-        jButton7.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
-        jButton7.setForeground(new java.awt.Color(255, 255, 255));
-        jButton7.setText("Inversa");
+        Identidad.setBackground(new java.awt.Color(0, 102, 102));
+        Identidad.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        Identidad.setForeground(new java.awt.Color(255, 255, 255));
+        Identidad.setText("Identidad");
+        Identidad.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                IdentidadActionPerformed(evt);
+            }
+        });
 
         btnRestar.setBackground(new java.awt.Color(0, 102, 102));
         btnRestar.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
@@ -236,7 +241,7 @@ public class frmInicio extends javax.swing.JFrame {
                         .addComponent(btnMultiplicar, javax.swing.GroupLayout.PREFERRED_SIZE, 312, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 99, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jButton7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(Identidad, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnDeterminante, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnRestar, javax.swing.GroupLayout.PREFERRED_SIZE, 312, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(57, 57, 57))
@@ -255,7 +260,7 @@ public class frmInicio extends javax.swing.JFrame {
                 .addGap(50, 50, 50)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnTranspuesta, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Identidad, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(176, Short.MAX_VALUE))
         );
 
@@ -552,6 +557,10 @@ public class frmInicio extends javax.swing.JFrame {
         int det = Cmat.determinanteMatriz(Cmat.obtenerMatC(), Cmat.obtenerMatC().length);
         JOptionPane.showInternalMessageDialog(null, det);
     }//GEN-LAST:event_btnDeterminanteActionPerformed
+
+    private void IdentidadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IdentidadActionPerformed
+        Cmat.MatrizIdentidad(Cmat.obtenerMatC().length);
+    }//GEN-LAST:event_IdentidadActionPerformed
     
     /**
      * @param args the command line arguments
@@ -590,13 +599,13 @@ public class frmInicio extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton Identidad;
     private javax.swing.JButton btnDeterminante;
     private javax.swing.JButton btnEstablecerMatriz;
     private javax.swing.JButton btnMultiplicar;
     private javax.swing.JButton btnRestar;
     private javax.swing.JButton btnSumar;
     private javax.swing.JButton btnTranspuesta;
-    private javax.swing.JButton jButton7;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;

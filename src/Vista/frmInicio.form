@@ -270,7 +270,7 @@
                       </Group>
                       <EmptySpace pref="99" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="jButton7" max="32767" attributes="0"/>
+                          <Component id="Identidad" max="32767" attributes="0"/>
                           <Component id="btnDeterminante" alignment="0" max="32767" attributes="0"/>
                           <Component id="btnRestar" alignment="0" min="-2" pref="312" max="-2" attributes="0"/>
                       </Group>
@@ -294,7 +294,7 @@
                       <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="btnTranspuesta" alignment="3" min="-2" pref="83" max="-2" attributes="0"/>
-                          <Component id="jButton7" alignment="3" min="-2" pref="78" max="-2" attributes="0"/>
+                          <Component id="Identidad" alignment="3" min="-2" pref="78" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace pref="176" max="32767" attributes="0"/>
                   </Group>
@@ -370,7 +370,7 @@
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnMultiplicarActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JButton" name="jButton7">
+            <Component class="javax.swing.JButton" name="Identidad">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="66" green="66" red="0" type="rgb"/>
@@ -381,8 +381,11 @@
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Inversa"/>
+                <Property name="text" type="java.lang.String" value="Identidad"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="IdentidadActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="btnRestar">
               <Properties>

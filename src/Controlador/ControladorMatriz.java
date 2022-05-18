@@ -212,4 +212,43 @@ public class ControladorMatriz extends ModeloMatriz {
         }
         return determinante;
     }
+    
+    public void MatrizIdentidad(int dimension){
+        int ident[][]=new int[dimension][dimension];
+         for(int i=0;i<ident.length;i++){
+            for(int j=0;j<ident[i].length;j++){
+                if(i==j){
+                    ident[i][j]=1;
+                }else{
+                    ident[i][j]=0;
+                }
+                System.out.print(ident[i][j]+" ");
+            }
+            System.out.println(" ");
+        }
+    }
+    
+    public double inversa(){
+        double determinante;
+        determinante = determinanteMatriz(matrizArrayC,matrizArrayC.length);
+        
+        if(determinante==0) {
+            System.out.println("Matriz singular, no existe la inversa");
+        }
+        return determinante;
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+   
+
+    
 }
