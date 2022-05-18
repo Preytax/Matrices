@@ -8,6 +8,7 @@ public class ControladorMatriz extends ModeloMatriz {
     int matrizArrayA[][];
     int matrizArrayB[][];
     int matrizArrayC[][];
+    
     int filasA;
     int columnasA;
     int filasB;
@@ -43,7 +44,8 @@ public class ControladorMatriz extends ModeloMatriz {
 
         for (int i = 0; i < matrizArrayA.length; i++) {
             for (int j = 0; j < matrizArrayA[i].length; j++) {
-                matrizArrayA[i][j] = (int) (Math.random() * 9 + 1);
+                String valor = JOptionPane.showInputDialog("matriz A [" + i + "][" + j + "]");
+                matrizArrayA[i][j] = Integer.parseInt(valor);
             }
         }
         return matrizArrayA;
@@ -57,10 +59,15 @@ public class ControladorMatriz extends ModeloMatriz {
 
         for (int i = 0; i < matrizArrayB.length; i++) {
             for (int j = 0; j < matrizArrayB[i].length; j++) {
-                matrizArrayB[i][j] = (int) (Math.random() * 9 + 1);
+                String valor = JOptionPane.showInputDialog("matriz B [" + i + "][" + j + "]");
+                matrizArrayB[i][j] = Integer.parseInt(valor);
             }
         }
         return matrizArrayB;
+    }
+    
+    public int[][] obtenerMatC(){
+        return matrizArrayC;
     }
 
     public String ImprimirMatrizA() {
@@ -171,5 +178,38 @@ public class ControladorMatriz extends ModeloMatriz {
                 matrizArrayC[j][i] = aux;
             }
         }
+    }
+    
+    public void obtenerCofactor(int matriz[][], int temp[][], int p, int q, int n){
+        int i = 0;
+        int j = 0;
+        
+        for (int fila = 0; fila < n; fila++) {
+            for (int columna = 0; columna < n; columna++) {
+                if(fila!=p && columna != q){
+                    temp[i][j++] = matriz[fila][columna];
+                    if(j == n-1){
+                        j=0;
+                        i++;
+                    }
+                }
+            }
+        }
+    }//termina cofactor
+    
+    public int determinanteMatriz(int matriz[][], int n){
+        
+        int determinante = 0;
+        if(n == 1){
+            return matriz[0][0];
+        }
+        int temp[][] = new int[n][n];
+        int multiplicador = 1;
+        for (int f = 0; f < n; f++) {
+            obtenerCofactor(matriz, temp, 0, f, n);
+            determinante += multiplicador * matriz[0][f] * determinanteMatriz(temp, n-1);
+            multiplicador = -multiplicador;
+        }
+        return determinante;
     }
 }
